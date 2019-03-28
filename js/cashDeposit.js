@@ -51,7 +51,6 @@ $(function(){
 		window.location.href = "task.html";
 		window.close();
 	});
-	
 	$('.case_price').bind('input propertychange', function() {  
 		var self = $(this);
 		var allPrice = parseFloat($('#ky-rmb').html());
