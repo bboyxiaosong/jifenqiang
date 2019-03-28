@@ -34,7 +34,7 @@
 		<div class="error" style="display:none;"></div>
 		<script type="text/javascript">
 			$(function(){
-				var userObj = get('userObj',1000*60*60*24*7);//过期时间为1周
+				var userObj = get('userObj');//过期时间为1周
 			    if (!userObj) {
 			    	 	window.location.href="index.html";
 			       	window.close();
