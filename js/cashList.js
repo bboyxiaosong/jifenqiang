@@ -21,7 +21,8 @@ $(function(){
     
      window.onscroll = function() {
         if (getScrollTop() + getWindowHeight() >= getScrollHeight() - 20 && isbool == true) {
-            isbool = false;
+        		isbool = false;
+        		$('body').find('.loading-container').show();
             setTimeout(function(){
             		if(isLoading){
             			++pageNo;
@@ -34,17 +35,18 @@ $(function(){
 });
 //4.6	获取会员账务明细
 function billListCtrl(params){
-	$('body').find('.loading-container').show();
 	getJsonpHtml('/baihe-adserver/user/bill/list',params,function(data){
  		if(data.code == 0){
 		 	if(data.data.accountdetailslist.length > 0){
 		 		isLoading = true;
+		 		isbool = true;
 		 	}else{
 		 		isLoading = false;
+		 		isbool = false;
 		 	}
 		 	taskListCtrl(data.data.accountdetailslist,params);
 		 	$('body').find('.loading-container').hide();
-           	isbool = true;
+           	
 		}else{
 			errorAlert(data.msg);
 		}

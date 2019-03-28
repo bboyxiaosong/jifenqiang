@@ -21,6 +21,7 @@ $(function(){
     window.onscroll = function() {
         if (getScrollTop() + getWindowHeight() >= getScrollHeight() - 20&&isbool==true) {
             isbool = false;
+            $('body').find('.loading-container').show();
             setTimeout(function(){
             		if(isLoading){
             			++pageNo;
@@ -37,11 +38,13 @@ function taskHitstoryCtrl(params){
 		if(data.code == 0){
 			 if(data.data.tasklist.length > 0){
 			 	isLoading = true;
+			 	isbool = true;
 			 }else{
 			 	isLoading = false;
+			 	isbool = false;
 			 }
-			 isbool = true;
 			 taskListCtrl(data.data.tasklist,params);
+			 $('body').find('.loading-container').hide();
 		}else{
 			errorAlert(data.msg);
 		}
