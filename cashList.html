@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no" />
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<title>账户明细</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="stylesheet" type="text/css" href="//static1.hunli.baihe.com/rest.css" />
+		<link rel="stylesheet" type="text/css" href="css/integral.css" />
+		<script type="text/javascript">
+			var is_low = navigator.userAgent.toLowerCase().indexOf('android') != -1;
+			var _ww = (window.screen.availWidth * (window.devicePixelRatio || 1.5) / 1);
+			if(is_low && _ww < 720) {
+				document.writeln('<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=yes,initial-scale=0.5" />');
+			} else {
+				document.writeln('<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no" />');
+			}
+		</script>
+		<script type="text/javascript" charset="utf-8" src="//static4.hunli.baihe.com/common/jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		<div id="container" class="container">
+			<div class="cash-ul"></div>
+		</div>
+		<script src="js/jf-common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/cashList.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no" />
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<title>提现</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="stylesheet" type="text/css" href="//static1.hunli.baihe.com/rest.css" />
+		<link rel="stylesheet" type="text/css" href="css/integral.css" />
+		<script type="text/javascript">
+			var is_low = navigator.userAgent.toLowerCase().indexOf('android') != -1;
+			var _ww = (window.screen.availWidth * (window.devicePixelRatio || 1.5) / 1);
+			if(is_low && _ww < 720) {
+				document.writeln('<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=yes,initial-scale=0.5" />');
+			} else {
+				document.writeln('<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no" />');
+			}
+		</script>
+		<script type="text/javascript" charset="utf-8" src="//static4.hunli.baihe.com/common/jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		<div id="container" class="container">
+			<div class="jf-logo"></div>
+			<div class="detail-ul">
+				<div class="detail-li">
+					<label for="">支付宝账号：</label>
+					<input type="tel" id="alipayno" class="commom-ipt" maxlength="11" placeholder="请输入支付宝账号" />
+				</div>
+				<div class="detail-li">
+					<label for="">姓名：</label>
+					<input type="text" id="realname" class="commom-ipt" placeholder="请输入真实姓名" />
+				</div>
+				<div class="detail-li">
+					<label for="">支付密码：</label>
+					<input type="password" id="payPassword" class="commom-ipt" placeholder="请输入支付密码" />
+				</div>
+				<div class="detail-li" style="margin-bottom: 0;">
+					<p class="cash-title">提现金额</p>
+					<div class="cash_price_wrap"><label style="font-size: 50px;">￥</label><input type="number" class="case_price" maxlength="10" id="case_price" placeholder="请输入提现金额" /></div>
+					
+				</div>
+				<div class="cash-allmoney">可用余额  <span id="ky-rmb">0.00</span> 元</div>
+				<div class="detail-subscribe">
+					<input id="detail-bt" class="detail-bt" type="button" value="预计24小时内到账，确认提现">
+				</div>
+			</div>
+		</div>
+		<div class="dialog">
+			<div class="dialog-content">
+				<p class="p1">已申请提现</p>
+				<p class="p2">提现金额将在24小时内到账，请注意查收</p>
+				<p class="p2">如有问题请联系：<span>18601226470</span></p>
+				<p class="p3">确定</p>
+			</div>
+		</div>
+		<div class="error" style="display:none;"></div>
+		<script src="js/jf-common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/cashDeposit.js"></script>
+			
+			
+		
+	</body>
+
+</html>
