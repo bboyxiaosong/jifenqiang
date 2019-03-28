@@ -5,11 +5,13 @@
  * */
 
 var isbool = true;
+var pageNo = 1;
+var isLoading = true;
 $(function(){
 	addLoadingCtrl();
 	var userObj = get('userObj');//过期时间为1周
     if (userObj) {
-    		userObj.pageNo = 1;
+    		userObj.pageNo = pageNo;
     		userObj.pageSize = 10;
     		billListCtrl(userObj);
     }else{
@@ -20,25 +22,36 @@ $(function(){
      window.onscroll = function() {
         if (getScrollTop() + getWindowHeight() >= getScrollHeight() - 20 && isbool == true) {
             isbool = false;
-            userObj.pageNo += 1;
             setTimeout(function(){
-                billListCtrl(userObj);
-            },300)
+            		if(isLoading){
+            			++pageNo;
+            			userObj.pageNo = pageNo;
+            			billListCtrl(userObj);
+            		}
+            },300);
         } 
     }
 });
 //4.6	获取会员账务明细
 function billListCtrl(params){
+	$('body').find('.loading-container').show();
 	getJsonpHtml('/baihe-adserver/user/bill/list',params,function(data){
  		if(data.code == 0){
+		 	if(data.data.accountdetailslist.length > 0){
+		 		isLoading = true;
+		 	}else{
+		 		isLoading = false;
+		 	}
 		 	taskListCtrl(data.data.accountdetailslist,params);
+		 	$('body').find('.loading-container').hide();
+           	isbool = true;
 		}else{
 			errorAlert(data.msg);
 		}
 	 	},function(e){
 	 		
  	});
- 	isbool = true;
+ 	
 }
 
 function taskListCtrl(arr,params){

@@ -5,11 +5,13 @@
  * 历史任务列表
  * */
 var isbool = true;
+var pageNo = 1;
+var isLoading = true;
 $(function(){
 	addLoadingCtrl();
 	var userObj = get('userObj');//过期时间为1周
     if (userObj) {
-    		userObj.pageNo = 1;
+    		userObj.pageNo = pageNo;
     		userObj.pageSize = 10;
     	 	taskHitstoryCtrl(userObj);
     }else{
@@ -19,18 +21,26 @@ $(function(){
     window.onscroll = function() {
         if (getScrollTop() + getWindowHeight() >= getScrollHeight() - 20&&isbool==true) {
             isbool = false;
-            userObj.pageNo += 1;
             setTimeout(function(){
-                taskHitstoryCtrl(userObj);
+            		if(isLoading){
+            			++pageNo;
+            			userObj.pageNo = pageNo;
+            			taskHitstoryCtrl(userObj);
+            		}
             },300)
         } 
     }
-    
 });
 //4.8	会员历史任务
 function taskHitstoryCtrl(params){
 	getJsonpHtml('/baihe-adserver/user/history/tasks',params,function(data){
 		if(data.code == 0){
+			 if(data.data.tasklist.length > 0){
+			 	isLoading = true;
+			 }else{
+			 	isLoading = false;
+			 }
+			 isbool = true;
 			 taskListCtrl(data.data.tasklist,params);
 		}else{
 			errorAlert(data.msg);
@@ -38,7 +48,7 @@ function taskHitstoryCtrl(params){
 	},function(e){
 		
 	});
-	 isbool = true;
+	 
 	
 }
 //4.11	用户确认完成任务
