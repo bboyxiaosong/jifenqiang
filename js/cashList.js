@@ -81,6 +81,11 @@ function taskListCtrl(arr,params){
 		}
 	}else{
 		ul_wrap.append(str);
+		if(params.pageNo > 1 && arr.length == 0){
+			footer ='<div class="suitable" style="display: block">就是这么多了</div>';
+        		ul_wrap.after(footer);
+		}
+		
 	}
 	
 }
