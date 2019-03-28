@@ -10,7 +10,7 @@ $(function(){
 	var userObj = get('userObj');//过期时间为1周
     if (userObj) {
     		userObj.pageNo = 1;
-    		userObj.pageSize = 20;
+    		userObj.pageSize = 10;
     	 	taskHitstoryCtrl(userObj);
     }else{
        window.close();
