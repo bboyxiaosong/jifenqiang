@@ -5,9 +5,9 @@
  * */
 $(function(){
 	addLoadingCtrl();
-	var userObj = get('userObj');//过期时间为1周
+	var userObj = get('userObj');
     if (userObj) {
-       	userObj.sid='BH12358'
+       	userObj.sid='BH12358';
 		if(userObj.uid){
 			getTasklistCtrl(userObj);
 			userInforCtrl(userObj);
@@ -23,7 +23,9 @@ $(function(){
     			});
 		}    
     }else{
-    		getTasklistCtrl(userObj);
+    		var obj = {};
+    		obj.sid='BH12358';
+    		getTasklistCtrl(obj);
         $('.no-login').show();
 		$('.is-land').hide();
     }
@@ -69,7 +71,7 @@ function taskListCtrl(arr){
 	}
 }
 function immedCtrl(ele){
-	var userObj = get('userObj');//过期时间为1周
+	var userObj = get('userObj');
 	if(userObj){
 		if(userObj.uid){
 			var tid = $(ele).attr('data-tid');
@@ -123,7 +125,7 @@ function exitCtrlFn(){
 	});
 }
 function historyCtrl(){
-	var userObj = get('userObj');//过期时间为1周
+	var userObj = get('userObj');
     if (userObj) {
     	 	window.location.href="taskHistory.html";
     }else{

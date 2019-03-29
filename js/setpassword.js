@@ -12,7 +12,7 @@ $(function(){
 	addLoadingCtrl();
 	var flag = false;
 	var params = {};
-	var userObj = get('userObj');//过期时间为1周
+	var userObj = get('userObj');//
     if (userObj) {
     	 	 params.mobile = userObj.tel;
     	 	 if(!userObj.isFlag){

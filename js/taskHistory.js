@@ -9,7 +9,7 @@ var pageNo = 1;
 var isLoading = true;
 $(function(){
 	addLoadingCtrl();
-	var userObj = get('userObj');//过期时间为1周
+	var userObj = get('userObj');//
     if (userObj) {
     		userObj.pageNo = pageNo;
     		userObj.pageSize = 10;
@@ -71,7 +71,7 @@ function completeCtrl(params){
 function sureCtrlFn(ele){
 	var self = $(ele);
 	var tid = self.attr('data-tid');
-	var userObj = get('userObj');//过期时间为1周
+	var userObj = get('userObj');//
 	userObj.tid = tid;
 	if(self.hasClass('status_0')){
 		completeCtrl(userObj);

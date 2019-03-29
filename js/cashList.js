@@ -9,7 +9,7 @@ var pageNo = 1;
 var isLoading = true;
 $(function(){
 	addLoadingCtrl();
-	var userObj = get('userObj');//过期时间为1周
+	var userObj = get('userObj');//
     if (userObj) {
     		userObj.pageNo = pageNo;
     		userObj.pageSize = 10;
