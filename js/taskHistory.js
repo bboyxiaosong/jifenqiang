@@ -58,8 +58,7 @@ function taskHitstoryCtrl(params){
 function completeCtrl(params){
 	getJsonpHtml('/user/task/complete',params,function(data){
 		if(data.code == 0){
-			var params = {};
-			params.uid = params.uid;
+			params.pageNo = 1;
 			taskHitstoryCtrl(params);
 		}else{
 			errorAlert(data.msg);

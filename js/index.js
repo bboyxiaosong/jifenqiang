@@ -54,6 +54,8 @@ $(function(){
 	        errorAlert('验证码不能为空');
 	        return;
 	    }
+	 	params.mobile = $('#_tel').val();
+        params.piccode = $('#piccode').val();
 		params.smscode = $('#_code').val();
 		loginCtrl(params);
 	});
