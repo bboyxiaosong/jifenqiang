@@ -35,7 +35,7 @@ $(function(){
 //4.3	获取积分墙中的任务列表
 function getTasklistCtrl(params){
 	if(!params){var params = {}}
-	getJsonpHtml('/baihe-adserver/task/list',params,function(data){
+	getJsonpHtml('/task/list',params,function(data){
 		if(data.code == 200){
 			var arr = data.data.result;
 			taskListCtrl(arr);
@@ -84,9 +84,9 @@ function immedCtrl(ele){
 }
 //4.7	会员领取任务
 function receiveTaskCtrl(params){
-	getJsonpHtml('/baihe-adserver/user/get/task',params,function(data){
+	getJsonpHtml('/user/get/task',params,function(data){
 		if(data.code == 0){
-			getTasklistCtrl(obj);
+			getTasklistCtrl(params);
 			window.location.href = "taskDetail.html";
 		}else{
 			errorAlert(data.msg);
@@ -97,7 +97,7 @@ function receiveTaskCtrl(params){
 }
 //4.5	获取会员钱包余额
 function userInforCtrl(params){
-	getJsonpHtml('/baihe-adserver/user/wallet/balance',params,function(data){
+	getJsonpHtml('/user/wallet/balance',params,function(data){
 		if(data.code == -1){
 			errorAlert(data.msg)
 		}
@@ -111,7 +111,7 @@ function userInforCtrl(params){
 //4.4	用户退出登录
 function exitCtrlFn(){
 	var params = {};
-	getJsonpHtml('/baihe-adserver/user/exit',params,function(data){
+	getJsonpHtml('/user/exit',params,function(data){
 		if(data.code == -1){
 			errorAlert(data.msg)
 		}

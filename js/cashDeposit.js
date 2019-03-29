@@ -66,7 +66,7 @@ $(function(){
 });
 //4.5	获取会员钱包余额
 function userInforCtrl(params){
-	getJsonpHtml('/baihe-adserver/user/wallet/balance',params,function(data){
+	getJsonpHtml('/user/wallet/balance',params,function(data){
 		if(data.code == -1){
 			errorAlert(data.msg);
 		}
@@ -78,7 +78,7 @@ function userInforCtrl(params){
 	});
 }
 function userCashDeposit(params){
-	getJsonpHtml('/baihe-adserver/user/withdraw',params,function(data){
+	getJsonpHtml('/user/withdraw',params,function(data){
 		if(data.code == -1){
 			errorAlert(data.msg);
 		}

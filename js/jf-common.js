@@ -7,7 +7,7 @@
  * 
  * */
 
-var _url = 'http://120.92.93.15:8089';
+var _url = 'http://120.92.93.15:8089/baihe-adserver';
 
 function isTel(s) {
 	if(s.length != 11) return false;

@@ -35,7 +35,7 @@ $(function(){
 });
 //4.6	获取会员账务明细
 function billListCtrl(params){
-	getJsonpHtml('/baihe-adserver/user/bill/list',params,function(data){
+	getJsonpHtml('/user/bill/list',params,function(data){
  		if(data.code == 0){
 		 	if(data.data.accountdetailslist.length > 0){
 		 		isLoading = true;

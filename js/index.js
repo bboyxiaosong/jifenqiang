@@ -5,7 +5,7 @@
  * */
 
  function getImgCode(ele){
-	  $(ele).attr("src",_url+"/baihe-adserver/piccode?r=" + Math.floor(Math.random()*100000));
+	  $(ele).attr("src",_url+"/piccode?r=" + Math.floor(Math.random()*100000));
  }
  
 $(function(){
@@ -16,7 +16,7 @@ $(function(){
     	 	window.location.href="task.html";
        	window.close();
     }
-	$('#piccodeImg').attr("src",_url+"/baihe-adserver/piccode?r="+ Math.floor(Math.random()*100000));
+	$('#piccodeImg').attr("src",_url+"/piccode?r="+ Math.floor(Math.random()*100000));
 	var flag = false;
 	var params = {};
 	$('#code-bt').click(function(){
@@ -65,7 +65,7 @@ function checkInfor(){
     flag = true;
 }
 function loginCtrl(params){
-	getJsonpHtml('/baihe-adserver/user/login',params,function(data){
+	getJsonpHtml('/user/login',params,function(data){
 		if(data.code == -1){
 			errorAlert(data.msg)
 		}
@@ -85,7 +85,7 @@ function loginCtrl(params){
 	});
 }
 function getCodeCtrl(params){
-	getJsonpHtml('/baihe-adserver/get/smscode',params,function(data){
+	getJsonpHtml('/get/smscode',params,function(data){
  		if(data.code == 0){
 			settime($('#code-bt'));
 			errorAlert(data.msg);

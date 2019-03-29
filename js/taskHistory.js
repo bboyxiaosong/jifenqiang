@@ -34,7 +34,7 @@ $(function(){
 });
 //4.8	会员历史任务
 function taskHitstoryCtrl(params){
-	getJsonpHtml('/baihe-adserver/user/history/tasks',params,function(data){
+	getJsonpHtml('/user/history/tasks',params,function(data){
 		if(data.code == 0){
 			 if(data.data.tasklist.length > 0){
 			 	isLoading = true;
@@ -56,7 +56,7 @@ function taskHitstoryCtrl(params){
 }
 //4.11	用户确认完成任务
 function completeCtrl(params){
-	getJsonpHtml('/baihe-adserver/user/task/complete',params,function(data){
+	getJsonpHtml('/user/task/complete',params,function(data){
 		if(data.code == 0){
 			var params = {};
 			params.uid = params.uid;

@@ -5,7 +5,7 @@
  * */
 
  function getImgCode(ele){
-	  $(ele).attr("src",_url+"/baihe-adserver/piccode?r=" + Math.floor(Math.random()*100000));
+	  $(ele).attr("src",_url+"/piccode?r=" + Math.floor(Math.random()*100000));
  }
  
 $(function(){
@@ -25,7 +25,7 @@ $(function(){
     }   
 	//首次赋值
 	
-	$('#piccodeImg').attr("src",_url+"/baihe-adserver/piccode?r="+ Math.floor(Math.random()*100000));
+	$('#piccodeImg').attr("src",_url+"/piccode?r="+ Math.floor(Math.random()*100000));
 	$('#code-bt').click(function(){
 		
 	    if($('#piccode').val() == ''){
@@ -80,7 +80,7 @@ function checkInfor(){
 }
 
 function getCodeCtrl(params){
-	getJsonpHtml('/baihe-adserver/get/smscode',params,function(data){
+	getJsonpHtml('/get/smscode',params,function(data){
  		if(data.code == 0){
 			settime($('#code-bt'));
 			errorAlert(data.msg);
@@ -95,7 +95,7 @@ function getCodeCtrl(params){
 }
 
 function submitPowardCtrl(params){
-	getJsonpHtml('/baihe-adserver/user/set/payassword',params,function(data){
+	getJsonpHtml('/user/set/payassword',params,function(data){
  		if(data.code == -1){
 			//errorAlert(data.msg);
 			$('.mask,.fail_wrap').show();
