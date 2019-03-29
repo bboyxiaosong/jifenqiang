@@ -97,7 +97,7 @@ function taskListCtrl(arr,params){
 	});
 	if(params.pageNo == 1){
 		if(!arr.length){
-			ul_wrap.html('<div class="no_content">暂无账务明细</div>');
+			ul_wrap.html('<div class="no_content">暂无历史任务</div>');
 		}else{
 			ul_wrap.html(str);
 		}
