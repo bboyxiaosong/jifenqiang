@@ -58,7 +58,7 @@ input{border:none;background:none;outline:none;-webkit-appearance:none;}
 .cash-ul{width: 750px;margin: 0 auto;}
 .cash-ul .cash-list{padding: 0 30px 0 30px;height: 140px;border-bottom: 1px solid #e5e5e5;clear: both;}
 .cash-ul .cash-list .left-wrap{float: left;width: 306px;}
-.cash-ul .cash-list .left-wrap .store-name{color: #000;font-size: 32px;padding: 36px 0 18px 0;}
+.cash-ul .cash-list .left-wrap .store-name{color: #000;font-size: 32px;padding: 36px 0 18px 0;width: 300px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
 .cash-ul .cash-list .left-wrap .cash-times{color: #b8b5bd;font-size: 24px;}
 .cash-ul .cash-list .center-wrap{float: left;line-height: 140px;color: #b8b5bd;font-size: 26px;}
 .cash-ul .cash-list .right-wrap{float: right;color: #ff2828;font-size: 40px;line-height: 140px;}
