@@ -32,8 +32,8 @@ input{border:none;background:none;outline:none;-webkit-appearance:none;}
 .ul-wrap{width: 750px;padding-bottom: 20px;margin-bottom: 60px;}
 .ul-wrap .list{height: 170px;width: 690px;margin: 0 auto 40px auto;border-radius: 20px;-moz-box-shadow:3px 1px 20px #e1e1e1; -webkit-box-shadow:3px 1px 20px #e1e1e1; box-shadow:3px 1px 20px #e1e1e1;}
 .ul-wrap .lf-head{width: 80px;height: 80px;border-radius: 50%;background-color: #fb9797;float: left;margin: 42px 0 0 29px;}
-.ul-wrap .center-time{padding-left: 36px;float: left;}
-.ul-wrap .center-time .label-name{font-size: 32px;color: #000;padding: 40px 0 10px 0;}
+.ul-wrap .center-time{padding-left: 36px;float: left;width: 300px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.ul-wrap .center-time .label-name{font-size: 32px;color: #000;padding: 40px 0 10px 0;width: 300px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
 .ul-wrap .rewardprice{font-size: 28px;color: #f7af37;padding: 0px 0 8px 0;}
 .ul-wrap .center-time .bottom-time{font-size: 24px;color: #b8b5bd;}
 .ul-wrap .center-time .bottom-time .daoqi-time{padding-left: 39px;}
@@ -58,7 +58,7 @@ input{border:none;background:none;outline:none;-webkit-appearance:none;}
 .cash-ul{width: 750px;margin: 0 auto;}
 .cash-ul .cash-list{padding: 0 30px 0 30px;height: 140px;border-bottom: 1px solid #e5e5e5;clear: both;}
 .cash-ul .cash-list .left-wrap{float: left;width: 306px;}
-.cash-ul .cash-list .left-wrap .store-name{color: #000;font-size: 32px;padding: 36px 0 18px 0;width: 300px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
+.cash-ul .cash-list .left-wrap .store-name{color: #000;font-size: 32px;padding: 36px 0 18px 0;width: 300px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
 .cash-ul .cash-list .left-wrap .cash-times{color: #b8b5bd;font-size: 24px;}
 .cash-ul .cash-list .center-wrap{float: left;line-height: 140px;color: #b8b5bd;font-size: 26px;}
 .cash-ul .cash-list .right-wrap{float: right;color: #ff2828;font-size: 40px;line-height: 140px;}
@@ -69,7 +69,7 @@ input{border:none;background:none;outline:none;-webkit-appearance:none;}
 .task-ul{width: 750px;margin: 0 auto;}
 .task-ul .task-li{padding: 0 30px 0 30px;height: 150px;border-bottom: 1px solid #e5e5e5;clear: both;}
 .task-ul .task-li .left-wrap{float: left;max-width: 460px;white-space: nowrap;text-overflow:ellipsis;overflow: hidden;}
-.task-ul .task-li .left-wrap .store-name{color: #000;font-size: 32px;padding: 44px 0 18px 0;}
+.task-ul .task-li .left-wrap .store-name{color: #000;font-size: 32px;padding: 44px 0 18px 0;width: 450px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
 .task-ul .task-li .left-wrap .cash-times{color: #b8b5bd;font-size: 24px;}
 .task-ul .task-li .lf-img{float: left;height: 100px;width:100px;border-radius: 50%;margin: 26px 28px 0 0px;}
 .task-ul .task-li .right-wrap{float: right;color: #b8b5bd;font-size: 24px;line-height: 150px;}
