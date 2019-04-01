@@ -29,7 +29,17 @@
 	</head>
 	<body>
 		<div class="container">
-			
+			<div class="taskDetail-wrap">
+				<img id="taskDetail-img_url" class="taskDetail-img_url" />
+				<div class="taskDetail-desc-title">任务描述 :</div>
+				<div class="taskDetail-desc"></div>
+				<a class="taskDetail-bt">立即前往</a>
+				<div class="taskDetail-instruce">
+					<p class="p1">免责声明 ：</p>
+					<p class="p2">如任务完成发现作弊，任务奖励将不予发放，谢谢合作。</p>
+					<p class="p2">活动最终解释权归百合网所有。</p>
+				</div>
+			</div>
 		</div>
 		<div class="error" style="display:none;"></div>
 		<script type="text/javascript">
@@ -38,6 +48,17 @@
 			    if (!userObj) {
 			    	 	window.location.href="index.html";
 			       	window.close();
+			    }else{
+			    		var pic = getUrlParms('pic');
+			    		var _link =  getUrlParms('link');
+			    		var desc = getUrlParms('desc');
+			    		if(_link){
+			    			$('#taskDetail-img_url').attr('src',pic);
+				    		$('.taskDetail-bt').attr('href',_link);
+				    		$('.taskDetail-desc').html(desc);
+			    		}else{
+			    			window.location.href="task.html";
+			    		}
 			    }
 			});
 			

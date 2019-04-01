@@ -61,7 +61,7 @@ function taskListCtrl(arr){
 				+'      <div class="rewardprice">奖励金额'+ele.rewardprice+'元</div>'
 				+'		<div class="bottom-time"><span>'+getLocalTime(ele.expiretime,3)+'</span><span class="daoqi-time">'+getLocalTime(ele.expiretime,6)+' 到期</span></div>'
 				+'	</div>'
-				+'	<div class="rt-btn" data-tid="'+ele.tid+'" onclick="immedCtrl(this)">立即前往</div>'
+				+'	<div class="rt-btn" data-tid="'+ele.tid+'" onclick="immedCtrl(this)" data-link="'+ele.link.url+'" data-pic="'+ele.pic.url+'" data-desc="'+ele.introduction+'">立即前往</div>'
 				+'	<div class="clear"></div>'
 				+'</div>';
 		});
@@ -72,22 +72,27 @@ function taskListCtrl(arr){
 }
 function immedCtrl(ele){
 	var userObj = get('userObj');
+	var obj = {};
+	
 	if(userObj){
 		if(userObj.uid){
 			var tid = $(ele).attr('data-tid');
+			obj.pic =  $(ele).attr('data-pic');
+			obj.desc =  $(ele).attr('data-desc');
+			obj.link =  $(ele).attr('data-link');
 			userObj.tid = tid;
-			receiveTaskCtrl(userObj);
+			receiveTaskCtrl(userObj,obj);
 		}	
 	}else{
 		window.location.href = "index.html";
 	}
 }
 //4.7	会员领取任务
-function receiveTaskCtrl(params){
+function receiveTaskCtrl(params,obj){
 	getJsonpHtml('/user/get/task',params,function(data){
 		if(data.code == 0){
 			getTasklistCtrl(params);
-			window.location.href = "taskDetail.html";
+			window.location.href = "taskDetail.html?pic="+obj.pic+"&desc="+obj.desc+"&link="+obj.link;
 		}else{
 			errorAlert(data.msg);
 		}
