@@ -75,6 +75,8 @@ function sureCtrlFn(ele){
 	if(self.hasClass('status_0')){
 		completeCtrl(userObj);
 	}
+	
+	
 }
 
 function taskListCtrl(arr,params){
@@ -82,12 +84,11 @@ function taskListCtrl(arr,params){
 	var str = '';
 	var statusStr = '';
 	$.each(arr, function(index,ele) {
-			console.log(ele);
 			ele.statusName = ele.status== 0?'未完成</br>请确认':ele.status== 1?'待审核':ele.status==2?'已完成':ele.status==3?'已失效':'未通过';
 			
-			str+='<div class="task-li">'
-				+'<div class="lf-img" style="background: url('+ele.pic+') no-repeat center center;"></div>'
-				+'<div class="left-wrap">'
+			str+='<div class="task-li" data-link="'+ele.landurl+'" data-pic="'+ele.pic+'" data-desc="'+ele.content+'">'
+				+'<div class="lf-img" style="background: url('+ele.pic+') no-repeat center center;" data-status="'+ele.status+'" linkDetailCtrl(this)></div>'
+				+'<div class="left-wrap" data-status="'+ele.status+'" onclick="linkDetailCtrl(this)">'
 				+'	<div class="store-name">'+ele.tname+' <span style="color: #f8b526;">'+(ele.award/100)+'元</span></div>'
 				+'	<div class="cash-times">'+getLocalTime(ele.expiretime,3)+'<span class="daoqi-time">'+getLocalTime(ele.expiretime,6)+' 到期</span></div>'
 				+'</div>'
@@ -107,5 +108,17 @@ function taskListCtrl(arr,params){
 			footer ='<div class="suitable" style="display: block">就是这么多了</div>';
         		ul_wrap.after(footer);
 		}
+	}
+}
+
+function linkDetailCtrl(ele){
+	var self = $(ele);
+	var obj = {};
+	var status = parseInt(self.attr('data-status'));
+	obj.pic =  self.parent('.task-li').attr('data-pic');
+	obj.desc =  self.parent('.task-li').attr('data-desc');
+	obj.link =  self.parent('.task-li').attr('data-link');
+	if(status == 0 || status == 4){
+		window.location.href = "taskDetail.html?pic="+obj.pic+"&desc="+obj.desc+"&link="+obj.link;
 	}
 }

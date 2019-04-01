@@ -104,12 +104,9 @@ function getLocalTime(stamp, type) {
 			format = year + "-" + month + "-" + date + "  " + hour + ":" + minute;
 		}
 		if(type == 6) {
-			if(hour < 10) {
-				hour = '0' + hour;
-			}
-			if(minute < 10) {
-				minute = '0' + minute;
-			}
+//			if(hour < 10) {
+//				hour = '0' + hour;
+//			}
 			format =  hour + ":" + minute;
 		}
 		
