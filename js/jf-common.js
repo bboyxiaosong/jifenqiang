@@ -206,7 +206,7 @@ function getHtml(url, data, successfn, errorfn) {
         url:url,
         async: true,
 		dataType: "json",
-        data: {params: JSON.stringify(data)},
+        data: data,
         success: function (d) {
             if (successfn) {
                 successfn(d);
@@ -225,6 +225,10 @@ function getJsonpHtml(url, data, successfn, errorfn) {
 		url: _url + url,  // 跨域URL
 		type: 'GET',
 		dataType: 'jsonp',
+		xhrFields: {
+	      withCredentials: true
+	   },
+	   	crossDomain: true,
 		jsonp: 'jsoncallback', //默认callback
 		data: data,
         success: function (d) {
@@ -238,6 +242,7 @@ function getJsonpHtml(url, data, successfn, errorfn) {
             }
         }
     });
+    
 };
 
 //滚动条在Y轴上的滚动距离
